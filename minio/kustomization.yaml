@@ -5,12 +5,5 @@ helmCharts:
 - name: minio
   repo: https://charts.min.io/
   includeCRDs: true
-  namespace: argo
+  namespace: minio
   valuesFile: values.yaml
-
-patches:
-  - path: patch-argo-server.yaml
-    target:
-      version: v1
-      kind: Deployment
-      name: argo-server
