@@ -7,3 +7,8 @@ helmCharts:
   includeCRDs: true
   namespace: argo-events
   valuesFile: values.yaml
+
+resources:
+- eventbus-default.yaml
+- eventsource-mino-s3.yaml
+- sensor-minio.yaml
