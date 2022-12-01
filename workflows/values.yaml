@@ -1,1 +1,64 @@
+global:
+  image:
+    # -- The default image tag applied to all Argo Workflows deployments.
+    tag: v3.4.3-ak.0
+
+# -- Controller customizes the deployment of Argo Workflows controller.
+controller:
+  image:
+    # -- Image repository.
+    repository: quay.io/akuity/workflow-controller
+    # -- Overrides the image tag whose default is `global.image.tag`.
+    tag: ""
+  # -- Customizes the controller pod's resources.
+  resources: {}
+
+  # -- Extra environment variables to provide to the controller container.
+  extraEnv: []
+
+  # -- Extra arguments to be added to the controller.
+  extraArgs: []
+  # -- Number of replicas.
+  replicas: 1
+
+# -- Executor controls how the init and wait container should be customized.
+executor:
+  image:
+    # -- Image repository.
+    repository: quay.io/akuity/argoexec
+    # -- Overrides the image tag whose default is `global.image.tag`.
+    tag: ""
+
+# -- Server customizes the deployment of Argo Server
+server:
+  secure: true
+  image:
+    # -- Image repository.
+    repository: quay.io/akuity/argocli
+    # -- Overrides the image tag whose default is `global.image.tag`.
+    tag: ""
+
+  # -- Extra environment variables to provide to the argo-server container.
+  extraEnv: []
+
+  # -- Extra arguments to provide to the Argo Server binary.
+  extraArgs: []
+
+  # -- Server service configuration
+  service:
+    type: # NodePort or ClusterIP
+
+  # -- Configuration of the creation of Ingress object
+  ingress:
+    enabled: false
+
+    host: argo-workflows.example.com
+    annotations: {}
+    className: ""
+
+    tls:
+      enabled: false
+      secretName:
+
+# -- Configurations for workflow controller configmap. For a list of available configuration settings, see: https://github.com/argoproj/argo-workflows/blob/master/docs/workflow-controller-configmap.yaml
 config:
