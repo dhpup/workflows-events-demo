@@ -1,0 +1,12 @@
+- op: add
+  path: "/rules/0"
+  value:
+    apiGroups:
+      - argoproj.io
+    verbs:
+      - "*"
+    resources:
+      - workflows
+      - workflowtemplates
+      - cronworkflows
+      - clusterworkflowtemplates

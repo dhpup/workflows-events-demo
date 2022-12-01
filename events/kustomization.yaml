@@ -10,5 +10,12 @@ helmCharts:
 
 resources:
 - eventbus-default.yaml
-- eventsource-mino-s3.yaml
+- eventsource-minio.yaml
 - sensor-minio.yaml
+
+patches:
+  - path: patch-clusterrole-argo-events-role.yaml
+    target:
+      version: v1
+      kind: ClusterRole
+      name: argo-events-role
