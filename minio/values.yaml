@@ -341,7 +341,7 @@ users:
   ## make sure to disable this if you are using LDAP.
   - accessKey: argo-events
     secretKey: argo-events-secure-password
-    policy: readonly
+    policy: readwrite
   # Or you can refer to specific secret
   #- accessKey: externalSecret
   #  existingSecret: my-secret
