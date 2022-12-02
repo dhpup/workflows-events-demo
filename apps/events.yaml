@@ -9,7 +9,7 @@ spec:
     path: events
     targetRevision: HEAD
   destination:
-    namespace: argo
+    namespace: argo-events
     name: kind
   syncPolicy:
     syncOptions:

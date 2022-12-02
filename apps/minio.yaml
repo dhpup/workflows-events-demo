@@ -9,7 +9,7 @@ spec:
     path: minio
     targetRevision: HEAD
   destination:
-    namespace: argo
+    namespace: minio
     name: kind
   syncPolicy:
     syncOptions:
