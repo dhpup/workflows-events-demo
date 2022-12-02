@@ -1,6 +1,6 @@
 - op: replace
   path: "/spec/source/targetRevision"
-  value: "morey-tech-testing-1"
+  value: "HEAD"
 # - op: replace
 #   path: "/spec/destination/namespace"
 #   value: "argocd"
