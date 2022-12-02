@@ -3,6 +3,7 @@ kind: Kustomization
 
 helmCharts:
 - name: minio
+  releaseName: minio
   repo: https://charts.min.io/
   includeCRDs: true
   namespace: minio
