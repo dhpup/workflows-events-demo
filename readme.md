@@ -14,6 +14,7 @@ get password from `events/secret-artifact-minio.yaml`
 
 Apply app-of-apps
 `app-of-apps.yaml`
+- Will need to adjust destination to your own cluster. 
 - Assumes connected cluster arch (e.g., Akuity)
 
 Add --enable-helm for kustomize
