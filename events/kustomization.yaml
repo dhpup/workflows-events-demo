@@ -7,3 +7,16 @@ helmCharts:
   includeCRDs: true
   namespace: argo-events
   valuesFile: values.yaml
+
+resources:
+- eventbus-default.yaml
+- eventsource-minio.yaml
+- sensor-minio.yaml
+- secret-artifact-minio.yaml
+
+patches:
+  - path: patch-clusterrole-argo-events-role.yaml
+    target:
+      version: v1
+      kind: ClusterRole
+      name: argo-events-role

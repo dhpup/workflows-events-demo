@@ -7,3 +7,10 @@ helmCharts:
   includeCRDs: true
   namespace: argo
   valuesFile: values.yaml
+
+patches:
+  - path: patch-argo-server.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: argo-server
