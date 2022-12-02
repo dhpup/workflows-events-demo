@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/dhpup/workflows-events-demo'
+    path: minio
+    targetRevision: HEAD
+  destination:
+    namespace: argo
+    name: kind
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

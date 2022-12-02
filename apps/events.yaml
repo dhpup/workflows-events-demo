@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: events
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/dhpup/workflows-events-demo'
+    path: events
+    targetRevision: HEAD
+  destination:
+    namespace: argo
+    name: kind
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
