@@ -3,7 +3,7 @@ Workflows & Events Demo
 Add `--enable-helm` for kustomize.
 
 Apply [`app-of-apps.yaml`](./app-of-apps.yaml)
-- Will need to adjust destination to your own cluster. 
+- Will need to adjust destination to your own cluster in [apps/patch-argo-application.yaml](./apps/patch-argo-application.yaml)
 - Assumes connected cluster arch (e.g., Akuity)
 
 Connect to workflows and minio:
