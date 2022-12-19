@@ -1,20 +1,19 @@
 Workflows & Events Demo
 
-Connect to workflows:
-- use HTTPS
-- `kubectl -n argo port-forward deployment/argo-server 2746:2746`
-- No log in required thanks to auth-mode patch.
+Add `--enable-helm` for kustomize.
 
-kubectl -n argo port-forward deployment/argo-server 2746:2746
-kubectl port-forward svc/minio-console 9001 -n minio
-
-Update values in `apps/patch-argo-application.yaml`
-
-get password from `events/secret-artifact-minio.yaml`
-
-Apply app-of-apps
-`app-of-apps.yaml`
+Apply [`app-of-apps.yaml`](./app-of-apps.yaml)
 - Will need to adjust destination to your own cluster. 
 - Assumes connected cluster arch (e.g., Akuity)
 
-Add --enable-helm for kustomize
+Connect to workflows and minio:
+- `kubectl -n argo port-forward deployment/argo-server 2746:2746`
+- [`localhost:2748`](https://localhost:2748) (requires using HTTPS)
+  - No log in required thanks to auth-mode patch.
+
+Connect to minio:
+- `kubectl port-forward svc/minio-console 9001 -n minio`
+- [`localhost:9001`](http://localhost:9001)
+
+Update values in `apps/patch-argo-application.yaml`
+get password from `events/secret-artifact-minio.yaml`
