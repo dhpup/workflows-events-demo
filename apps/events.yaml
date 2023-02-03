@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
   destination:
     namespace: argo-events
-    name: mac2
+    name: '{{server}}'
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
