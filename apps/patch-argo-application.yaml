@@ -6,4 +6,4 @@
 #   value: "argocd"
 - op: replace
   path: "/spec/destination/name"
-  value: '{{server}}'
+  value: 'mac2'
