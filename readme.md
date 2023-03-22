@@ -8,7 +8,7 @@ Apply [`app-of-apps.yaml`](./app-of-apps.yaml)
 
 Connect to workflows and minio:
 - `kubectl -n argo port-forward deployment/argo-server 2746:2746`
-- [`localhost:2748`](https://localhost:2748) (requires using HTTPS)
+- [`localhost:2746`](https://localhost:2746) (requires using HTTPS)
   - No log in required thanks to auth-mode patch.
 
 Connect to minio:
