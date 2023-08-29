@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: apps
 spec:
-  project: default
+  project: wfevents
   source:
     repoURL: 'https://github.com/dhpup/workflows-events-demo'
     path: apps
